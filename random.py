@@ -1,22 +1,18 @@
-import random
-ma_list =["anne","aline","gros","eve","armand","yves","elv","allo","sonia","luc","marc","jules","kevin"]
-#this will contain an occurence of our list
-maListOc = ma_list
-#this list will contain our random list
-random_list = None
+from random import sample
+ma_liste = ["Hamidé", "Nil", "Hassan", "Ezechiel", "Succès", "Elie", "Bray", "Innocent", "Hamza", "Bertrand", "Issa", "Julie", "Exaucé", "Yannick", "Sevrin", "Hyppolite", "Seraphin", "Sakayo"]
+liste_randomise = []
 groupe = 1
-#for each element in ma_list, we randome and put into our variable
-for i in ma_list:
-#This condition will avoid errors when n is greater than 4
-    if(len(ma_list)<=5):
+for i in ma_liste:
+    if len(ma_liste) <= 5:
         break
-    random_list = random.sample(ma_list, 6)
-    #then we remove data already randomize in our list, but the complexity is high for this little program
-    for element in random_list:
-        ma_list.remove(element)
-    print("Goupe N°:",groupe)
-    #and we finally print our randomized list
-    print(random_list)
-    print("______________________________")
-    groupe += 1
-print(maListOc)
+    liste_randomise = sample(ma_liste, 6)
+    
+    for elem in liste_randomise:
+        ma_liste.remove(elem)
+    print("Groupe N° ", groupe)
+    print(liste_randomise)
+    print("----------------------------------------------------------")
+    groupe+=1
+if ma_liste:
+    print(ma_liste)
+        
